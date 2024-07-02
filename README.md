@@ -2,6 +2,10 @@
 
 ## ‼️ PLEASE NOTE THAT THIS IS NOT PRODUCTION READY CODE. EDUCATIONAL PURPOSE ONLY  ‼️
 
+## [🔗 Part 1 Blog Link](https://devtoys.io/2024/06/30/building-a-dynamic-blog-with-flask-and-htmx/)
+
+## [🔗 Part 2 Blog Link](https://devtoys.io/2024/07/02/creating-a-dynamic-blog-with-flask-htmx-tailwindcss-and-authentication-part-2/)
+
 This repository demonstrates how to create a dynamic blog application using Flask, HTMX, TailwindCSS, and user authentication. The project is divided into two parts: Part 1 covers the basic blog setup, and Part 2 extends it by adding TailwindCSS and user authentication.
 
 ## Features
@@ -98,6 +102,8 @@ flask run
 ```
 
 Open your web browser and navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
+
+---
 
 ### Part 2: Blog with TailwindCSS and Authentication
 
