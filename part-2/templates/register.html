@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-3xl font-bold text-center mb-8">Register</h1>
+<form method="post" class="mb-8 p-4 bg-white shadow-md rounded">
+    <input type="text" name="username" placeholder="Username" required class="w-full p-2 mb-4 border border-gray-300 rounded">
+    <input type="email" name="email" placeholder="Email" required class="w-full p-2 mb-4 border border-gray-300 rounded">
+    <input type="password" name="password" placeholder="Password" required class="w-full p-2 mb-4 border border-gray-300 rounded">
+    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Register</button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-3xl font-bold text-center mb-8">Blog Posts</h1>
+{% if current_user.is_authenticated %}
+    <form hx-post="{{ url_for('create') }}" hx-target="#posts" hx-swap="beforeend" method="post" class="mb-8 p-4 bg-white shadow-md rounded">
+        <input type="text" name="title" placeholder="Title" required class="w-full p-2 mb-4 border border-gray-300 rounded">
+        <textarea name="content" placeholder="Content" required class="w-full p-2 mb-4 border border-gray-300 rounded"></textarea>
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Create</button>
+    </form>
+{% endif %}
+<div id="posts" class="space-y-4">
+    {% for post in posts %}
+        {% include 'post_snippet.html' %}
+    {% endfor %}
+</div>
+{% endblock %}

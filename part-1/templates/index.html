@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Blog Posts</h1>
+<form hx-post="{{ url_for('create') }}" hx-target="#posts" hx-swap="beforeend" method="post">
+    <input type="text" name="title" placeholder="Title" required>
+    <textarea name="content" placeholder="Content" required></textarea>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+<div id="posts">
+    {% for post in posts %}
+        {% include 'post_snippet.html' %}
+    {% endfor %}
+</div>
+{% endblock %}

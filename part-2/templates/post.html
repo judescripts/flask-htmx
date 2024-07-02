@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="post-{{ post.id }}" class="post bg-white p-8 shadow-md rounded">
+    <h1 class="text-2xl font-bold mb-4">{{ post.title }}</h1>
+    <p class="mb-4">{{ post.content }}</p>
+    {% if current_user.is_authenticated and post.user_id == current_user.id %}
+    <div class="post-buttons flex space-x-4">
+        <a href="{{ url_for('edit', post_id=post.id) }}"
+           class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Edit</a>
+        <form action="{{ url_for('delete', post_id=post.id) }}" hx-delete="{{ url_for('delete', post_id=post.id) }}"
+              hx-target="#post-{{ post.id }}" hx-swap="outerHTML" method="post"
+              class="delete-form inline-block">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Delete</button>
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

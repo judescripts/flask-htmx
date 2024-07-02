@@ -1,0 +1,11 @@
+<div class="post" id="post-{{ post.id }}">
+    <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+    <p>{{ post.content }}</p>
+    <div class="post-buttons">
+        <form action="{{ url_for('delete', post_id=post.id) }}" hx-delete="{{ url_for('delete', post_id=post.id) }}" hx-target="#post-{{ post.id }}" hx-swap="outerHTML" method="post" class="delete-form">
+            <a href="{{ url_for('edit', post_id=post.id) }}" class="btn btn-primary">Edit</a>
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+</div>
